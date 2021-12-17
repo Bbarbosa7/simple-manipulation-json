@@ -1,5 +1,5 @@
 <?php
-// Brincando com a API da HG Brasil
+
 $json_api = file_get_contents("https://api.hgbrasil.com/weather");
 
 $json_decode = json_decode($json_api);
@@ -74,12 +74,12 @@ $json_decode = json_decode($json_api);
                         <?php
                         foreach ($json_decode->results->forecast as $key => $value) { ?>
                             <tr>
-                            <td scope="row"><?= $value->date; ?></td>
-                            <td><?= $value->weekday; ?></td>
-                            <td><?= $value->max; ?>º</td>
-                            <td><?= $value->min; ?>º</td>
-                            <td><?= $value->description; ?></td>
-                        </tr>
+                                <td scope="row"><?= $value->date; ?></td>
+                                <td><?= $value->weekday; ?></td>
+                                <td><?= $value->max; ?>º</td>
+                                <td><?= $value->min; ?>º</td>
+                                <td><?= $value->description; ?></td>
+                            </tr>
                         <?php } ?>
                     </tbody>
                 </table>
